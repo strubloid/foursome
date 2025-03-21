@@ -1,0 +1,9 @@
+[build]
+  command = "cd frontend && npm install && ng build --prod"  # Navigate to the frontend directory and build it
+  publish = "frontend/dist"  # Ensure the output is from the 'dist' folder inside frontend
+
+[functions]
+  directory = "backend/functions"  # If you have serverless functions inside the backend
+
+[context.production.environment]
+  NODE_ENV = "production"
