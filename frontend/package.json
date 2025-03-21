@@ -8,7 +8,7 @@
         "live": "bash bash/live.sh",
         "dev": "bash bash/development.sh",
         "test": "ng test",
-        "build:prod": "npm exec ng build --configuration production"
+        "build:prod": "npm exec ng build frontend --configuration production"
     },
     "private": true,
     "dependencies": {
