@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/strubloid/foursome/issues"
   },
-  "homepage": "https://github.com/strubloid/foursome#readme"
+  "homepage": "https://github.com/strubloid/foursome#readme",
+  "devDependencies": {
+    "@angular/cli": "^19.2.4"
+  }
 }
