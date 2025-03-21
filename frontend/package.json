@@ -1,6 +1,6 @@
 {
     "name": "foursome-frontend",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
@@ -8,7 +8,7 @@
         "live": "bash bash/live.sh",
         "dev": "bash bash/development.sh",
         "test": "ng test",
-        "build:prod": "npx ng build --configuration production"
+        "build:prod": "ng build --configuration production"
     },
     "private": true,
     "dependencies": {
