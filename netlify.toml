@@ -5,7 +5,14 @@
 [functions]
   directory = "backend/dist"
 
+# API proxy redirect
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/server/:splat"
+  status = 200
+
+# Angular routing fix (SPA fallback)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
   status = 200
