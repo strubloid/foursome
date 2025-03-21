@@ -20,3 +20,7 @@ node_modules/
 .npm
 # Local Netlify folder
 .netlify
+
+
+## removing the dist folder
+dist/
