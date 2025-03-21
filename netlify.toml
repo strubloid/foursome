@@ -2,3 +2,10 @@
   command = "cd frontend && npm install && npm run build:prod"
   publish = "frontend/dist"
   functions = "backend/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[context.production.environment]
+  NODE_ENV = "production"
+
