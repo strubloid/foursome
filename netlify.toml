@@ -1,6 +1,6 @@
 [build]
   publish = "frontend/dist/frontend"
-  command = "./netlify-build.sh"
+  command = "bash netlify-build.sh"
 
 [functions]
   directory = "backend/dist"
