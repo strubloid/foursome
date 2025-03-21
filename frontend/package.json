@@ -7,7 +7,8 @@
         "build": "ng build",
         "live": "bash bash/live.sh",
         "dev": "bash bash/development.sh",
-        "test": "ng test"
+        "test": "ng test",
+        "build:prod": "ng build --configuration production"
     },
     "private": true,
     "dependencies": {
