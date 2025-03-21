@@ -1,15 +1,6 @@
 [build]
   command = "cd frontend && npm install && npm run build:prod"
   publish = "dist/frontend"
-  functions = "backend/functions"
 
 [build.environment]
   NODE_VERSION = "20"
-
-[context.production.environment]
-  NODE_ENV = "production"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
