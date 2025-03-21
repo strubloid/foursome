@@ -1,2 +1,10 @@
-<h1>Foursome</h1>
-<!-- <router-outlet></router-outlet> -->
+<div class="container">
+  <h2>Word Processor</h2>
+  <form (ngSubmit)="submitWord()">
+    <input type="text" [(ngModel)]="word" name="word" required placeholder="Enter word"/>
+    <button type="submit">Send</button>
+  </form>
+  <div *ngIf="processedWord">
+    <p>You entered: {{ processedWord }}</p>
+  </div>
+</div>
