@@ -7,9 +7,3 @@
 
 [context.production.environment]
   NODE_ENV = "production"
-
-
-[build]
-
-  publish = "frontend/dist"
-  functions = "backend/functions"
