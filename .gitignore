@@ -1,8 +1,20 @@
 # webstorm folder
 .idea/
 
+# removing vscode configurations
+.vscode/
+frontend/.vscode/
+backend/.vscode/
+
+## Ignoring any kind of node modules to the git repository
+backend/node_modules/
+frontend/node_modules/
+node_modules/
 
 # Ignore of local environment variable
 .env
 .env.local
 .env.production
+
+# Optional npm cache directory
+.npm

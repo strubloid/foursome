@@ -1,0 +1,22 @@
+{
+  "name": "foursome",
+  "version": "1.0.0",
+  "description": "This is a game project t show my skills with javascript into building a game.",
+  "main": "index.js",
+  "scripts": {
+    "build-environment": "sh build.sh",
+    "run-frontend": "sh frontend/run.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strubloid/foursome.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/strubloid/foursome/issues"
+  },
+  "homepage": "https://github.com/strubloid/foursome#readme"
+}
