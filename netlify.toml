@@ -1,6 +1,6 @@
 [build]
-  command="cd frontend && npm install && ng build"
-  publish="dist/"
+  command = "cd frontend && npm install && npx ng build"
+  publish = "dist/frontend"
 
 [build.environment]
   NODE_VERSION = "20"
