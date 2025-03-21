@@ -1,0 +1,8 @@
+# webstorm folder
+.idea/
+
+
+# Ignore of local environment variable
+.env
+.env.local
+.env.production
