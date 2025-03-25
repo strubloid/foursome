@@ -9,4 +9,3 @@ let app = appObject.getApp();
 
 // Starting the server
 new Server(app).start();
-
