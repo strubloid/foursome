@@ -1,15 +1,33 @@
 // src/app.ts
-import express from 'express';
+import express, { Express, Request, Response } from 'express';
 import cors from 'cors';
 
-const app = express();
+export class App {
+  public app: Express;
 
-app.use(cors());
-app.use(express.json());
+  constructor() {
+    this.app = express();
+    this.configureMiddleware();
+    this.configureRoutes();
+  }
 
-app.post('/api/process-word', (req, res) => {
-  const { word } = req.body;
-  res.json({ word });
-});
+  private configureMiddleware(): void {
+    this.app.use(cors());
+    this.app.use(express.json());
+  }
 
-export default app;
+  private configureRoutes(): void {
+    this.app.post('/api/process-word', (req: Request, res: Response) => {
+      const { word } = req.body;
+      res.json({ word });
+    });
+  }
+
+  /**
+   * 
+   * @returns Method that will return the app instance.
+   */
+  public getApp(){
+      return this.app;
+  }
+}

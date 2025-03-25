@@ -1,13 +1,12 @@
 import dotenv from 'dotenv';
 dotenv.config();
-import { LocalServer } from './components/bootstrap/LocalServer';
-import { NetlifyServer } from './components/bootstrap/NetlifyServer';
-import app from './app';
+import { Server } from './Server';
+import { App }  from './app';
 
-const IS_NETLIFY = process.env.IS_NETLIFY === 'true';
+// Starting the App Instance
+let appObject = new App();
+let app = appObject.getApp();
 
-if (!IS_NETLIFY) {
-  new LocalServer().start();
-} else {
-  new NetlifyServer().start();
-}
+// Starting the server
+new Server(app).start();
+
