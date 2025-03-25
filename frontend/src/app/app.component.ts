@@ -18,6 +18,7 @@ export class AppComponent {
   submitWord() {
     this.http.post<{ word: string }>('/api/process-word', { word: this.word })
       .subscribe(response => {
+        console.log('response')
         this.processedWord = response.word;
       });
   }

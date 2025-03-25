@@ -1,12 +1,12 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "bootstrap.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec ts-node ./src/index.ts",
+    "dev": "nodemon --exec ts-node ./src/bootstrap.ts",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/bootstrap.js"
   },
   "keywords": [],
   "author": "",
