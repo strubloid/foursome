@@ -19,7 +19,7 @@ export class MainRouter {
    */
   private initializeStatusAPICall(): void {
     this.router.get('/api/status', (req: Request, res: Response) => {
-      res.json({ status: 'OK', message: 'Service is running' });
+      res.json({ status: 'OK', message: 'Service is running!' });
     });
   }
 

@@ -1,10 +1,9 @@
 [build]
-  command = "npm run build"
-  functions = "dist/netlify/functions"
-  publish = "dist"
+  publish = "dist/frontend/browser"
+  command = "bash netlify-build.sh"
 
 [functions]
-  node_bundler = "esbuild"
+  directory = "dist/backend"
 
 # API proxy redirect
 [[redirects]]

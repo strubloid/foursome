@@ -1,11 +1,11 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "bootstrap.js",
+  "main": "functions/api.js",
   "scripts": {
-    "dev": "nodemon --exec ts-node ./src/bootstrap.ts",
+    "dev": "nodemon --exec ts-node ./functions/api.ts",
     "build": "tsc",
-    "start": "node dist/bootstrap.js"
+    "start": "node dist/api.js"
   },
   "keywords": [],
   "author": "",

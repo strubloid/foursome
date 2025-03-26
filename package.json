@@ -3,13 +3,24 @@
   "version": "1.0.0",
   "scripts": {
     "build": "netlify deploy --prod",
-    "start": "netlify dev"
+    "start": "netlify dev",
+    "dev" : "netlify build && netlify serve"
   },
   "private": true,
   "dependencies": {
-    "netlify-cli": "^19.0.3"
+    "@netlify/functions": "^3.0.4",
+    "netlify-cli": "^19.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "serverless-http": "^3.2.0"
   },
   "devDependencies": {
-    
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.13.11",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
   }
 }

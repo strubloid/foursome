@@ -6,11 +6,13 @@ export class App {
 
   public app: Express;
   public router: Router;
+  public port: number | string;
 
   constructor() {
     this.app = express();
     this.router = express.Router();
     this.configureMiddleware();
+    this.port = process.env.PORT || 8888;
   }
 
   /**
@@ -35,5 +37,13 @@ export class App {
    */
   public getRouter(){
     return this.router;
+  }
+
+  /**
+   * Use this method return the port number.
+   * @returns port number
+   */
+  public getPort(){
+    return this.port;
   }
 }
