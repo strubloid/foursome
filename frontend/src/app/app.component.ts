@@ -16,7 +16,7 @@ export class AppComponent {
   constructor(private http: HttpClient) {}
 
   submitWord() {
-    this.http.post<{ word: string }>('/api/process-word', { word: this.word })
+    this.http.post<{ word: string }>('/api/component/word', { word: this.word })
       .subscribe(response => {
         this.processedWord = response.word;
       });

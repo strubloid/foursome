@@ -5,7 +5,7 @@ import serverless from 'serverless-http';
 import type { Handler, HandlerEvent, HandlerContext } from '@netlify/functions';
 import { App } from './app';
 import { MainRouter } from './mainRouter';
-import { Word } from './component/word/Word';
+import { Word } from './component/Word';
 
 const appObject = new App();
 const mainRouter = new MainRouter(appObject.getRouter());
