@@ -63,10 +63,9 @@ export class Server {
     } else {
 
       console.log("[Netifly] FALSE");
-      
+
       // basic configuration for local environment
       this.app.use(this.router);
-      // this.app.use('/.netlify/functions/api', this.router);
 
       this.app.listen(this.port, () => {
         console.log(`✅ Local backend server is running on http://localhost:${this.port}`);

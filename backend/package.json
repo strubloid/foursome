@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "main": "bootstrap.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --exec ts-node ./src/bootstrap.ts",
     "build": "tsc",
     "start": "node dist/bootstrap.js"
