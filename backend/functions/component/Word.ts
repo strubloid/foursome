@@ -12,6 +12,7 @@ export class Word implements FoursomeRouter {
    */
   constructor(router: Router) {
     this.router = router;
+    this.initializeRoutes();
   }
 
   /**
@@ -32,23 +33,23 @@ export class Word implements FoursomeRouter {
       
       return res.json(jsonResponse);
 
-  });
+    });
 
 
-//   this.router.post("/api/process-word", (req: any, res: any) => {
+    this.router.post("/api/word", (req: any, res: any) => {
 
-//     let body = req.body;
-//     let jsonResponse : any = {};
+      let body = req.body;
+      let jsonResponse : any = {};
 
-//     if(req.body.word !== undefined){
-//         jsonResponse = { word : req.body.word };         
-//     } else {
-//         return res.status(400).json({ word: "Word is required" });
-//     }
-    
-//     return res.json(jsonResponse);
+      if(req.body.word !== undefined){
+          jsonResponse = { word : req.body.word + "RAFAEL" };         
+      } else {
+          return res.status(400).json({ word: "Word is required" });
+      }
+      
+      return res.json(jsonResponse);
 
-// });
-
+    });
   }
 }
+

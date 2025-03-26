@@ -11,7 +11,7 @@ const appObject = new App();
 const mainRouter = new MainRouter(appObject.getRouter());
 
 // Initialize all your routes
-new Word(mainRouter.getRouter()).initializeRoutes();
+new Word(mainRouter.getRouter());
 
 // Check if we're running on Netlify or local
 const isNetlify = process.env.IS_NETLIFY === 'true';
@@ -23,6 +23,8 @@ if (!isNetlify) {
     console.log(`✅ Local backend server is running on http://localhost:${appObject.getPort()}`);
   });
 }
+
+console.log('[It is on Netlify]')
 
 // Netlify-specific export
 const expressApp = appObject.getApp();
