@@ -1,9 +1,9 @@
 import { Router, Request, Response } from "express";
 import { ParamsDictionary } from "express-serve-static-core";
 import { ParsedQs } from "qs";
-import { FoursomeRouter } from "../foursomeRouter";
 
-export class Word implements FoursomeRouter {
+export class Word {
+  
   public router: Router;
 
   /**

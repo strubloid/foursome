@@ -4,38 +4,39 @@ dotenv.config();
 import serverless from 'serverless-http';
 import type { Handler, HandlerEvent, HandlerContext } from '@netlify/functions';
 import { App } from './app';
-import { MainRouter } from './mainRouter';
-import { Word } from './component/Word';
+import { Word } from './api/Word';
 
 const appObject = new App();
-const mainRouter = new MainRouter(appObject.getRouter());
+let app = appObject.getApp();
+let router = appObject.getRouter();
+let handler: Handler;
 
 // Initialize all your routes
-new Word(mainRouter.getRouter());
+new Word(router);
 
 // Check if we're running on Netlify or local
 const isNetlify = process.env.IS_NETLIFY === 'true';
 
 if (!isNetlify) {
+  
+  console.log('[DEV Mode]')
   // Local dev mode
-  appObject.getApp().use(appObject.getRouter());
-  appObject.getApp().listen(appObject.getPort(), () => {
+  app.use(appObject.getRouter());
+  app.listen(appObject.getPort(), () => {
     console.log(`✅ Local backend server is running on http://localhost:${appObject.getPort()}`);
   });
+
+} else {
+
+  console.log('[It is on Netlify]')
+  app.use('/.netlify/functions/api', router);
+  const expressHandler = serverless(app);
+  
+  handler = async (event: HandlerEvent, context: HandlerContext) => {
+      const result = await expressHandler(event, context);
+      return result as any;
+  };
+  
 }
 
-console.log('[It is on Netlify]')
-
-// Netlify-specific export
-const expressApp = appObject.getApp();
-expressApp.use('/.netlify/functions/api', mainRouter.getRouter());
-
-const expressHandler = serverless(expressApp);
-let handler: Handler;
-handler = async (event: HandlerEvent, context: HandlerContext) => {
-    const result = await expressHandler(event, context);
-    return result as any;
-};
-
-// 👇 THIS is what Netlify will use
 export { handler };
