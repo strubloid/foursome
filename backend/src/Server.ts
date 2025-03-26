@@ -23,6 +23,10 @@ export class Server {
     // getting references to the server, in this case is netlify
     this.isNetlify = process.env.IS_NETLIFY === 'true';
 
+    console.log("CHECK THIS OUT")
+    console.log(this.isNetlify)
+    console.log("CHECK THIS OUT")
+
     // basic a port configuration
     this.port = process.env.PORT || 3000;
 
@@ -39,9 +43,13 @@ export class Server {
 
   public start(): void {
 
+    console.log("[Start] SERVER.TS");
+
     // quick check if is netlify or its on local environment.
     if (this.isNetlify) {
       
+      console.log("[Netifly] TRUE");
+
       // we need to add this so the api is cofigured to work on netifly
       this.app.use('/.netlify/functions/api', this.router);
 
@@ -53,8 +61,13 @@ export class Server {
       };
 
     } else {
+
+      console.log("[Netifly] FALSE");
+      
       // basic configuration for local environment
       this.app.use(this.router);
+      // this.app.use('/.netlify/functions/api', this.router);
+
       this.app.listen(this.port, () => {
         console.log(`✅ Local backend server is running on http://localhost:${this.port}`);
       });

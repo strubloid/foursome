@@ -1,0 +1,15 @@
+{
+  "name": "Foursome",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "netlify deploy --prod",
+    "start": "netlify dev"
+  },
+  "private": true,
+  "dependencies": {
+    "netlify-cli": "^19.0.3"
+  },
+  "devDependencies": {
+    
+  }
+}

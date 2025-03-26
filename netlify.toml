@@ -3,12 +3,12 @@
   command = "bash netlify-build.sh"
 
 [functions]
-  directory = "backend/dist"
+  directory = "dist"
 
 # API proxy redirect
 [[redirects]]
   from = "/api/*"
-  to = "/.netlify/functions/server/:splat"
+  to = "/.netlify/functions/api/:splat"
   status = 200
 
 # Angular routing fix (SPA fallback)
