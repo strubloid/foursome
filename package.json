@@ -4,7 +4,8 @@
   "scripts": {
     "build": "netlify deploy --prod",
     "start": "netlify dev",
-    "dev" : "netlify build && netlify serve"
+    "dev" : "netlify build",
+    "dev2" : "netlify serve"
   },
   "private": true,
   "dependencies": {

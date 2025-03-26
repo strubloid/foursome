@@ -29,7 +29,10 @@ if (!isNetlify) {
 } else {
 
   console.log('[It is on Netlify]')
-  app.use('/.netlify/functions/api', router);
+  
+  // app.use('/.netlify/functions/api', router);
+  
+  app.use(appObject.getRouter());
   const expressHandler = serverless(app);
   
   handler = async (event: HandlerEvent, context: HandlerContext) => {
